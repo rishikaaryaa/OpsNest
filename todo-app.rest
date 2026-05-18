@@ -1,0 +1,60 @@
+### GET/
+GET http://localhost:5001
+
+###REGISTER a user POST /auth/register
+POST http://localhost:5001/auth/register
+Content-Type: application/json
+
+{
+    "username": "haridas@gmail.com",
+    "password": "password123"
+}
+
+###login a user POST /auth/login
+POST http://localhost:5001/auth/login
+Content-Type: application/json
+
+{
+    "username": "haridas@gmail.com",
+    "password": "password123"
+} 
+
+### Fetch all todos FET/TODOS (protected)
+GET http://localhost:5001/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc4OTM4MjE3LCJleHAiOjE3NzkwMjQ2MTd9.jUEoT5CRHvqskEz_6Aez_jINF2Wmx3M9S6IrDUcUydw
+
+### Create a new todo POST/TODOS (protected)
+POST http://localhost:5001/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc4OTM4MjE3LCJleHAiOjE3NzkwMjQ2MTd9.jUEoT5CRHvqskEz_6Aez_jINF2Wmx3M9S6IrDUcUydw
+Content-Type: application/json
+
+{
+    "title": "Prepare Tech9Labs briefing"
+}
+
+### Update a todo PUT/TODOS/:id (protected)
+PUT http://localhost:5001/todos/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc4OTM4MjE3LCJleHAiOjE3NzkwMjQ2MTd9.jUEoT5CRHvqskEz_6Aez_jINF2Wmx3M9S6IrDUcUydw
+
+{
+    "completed": 1
+} 
+
+### Delete a todo DELETE/TODOS/:id (protected)
+DELETE http://localhost:5001/todos/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc4OTM4MjE3LCJleHAiOjE3NzkwMjQ2MTd9.jUEoT5CRHvqskEz_6Aez_jINF2Wmx3M9S6IrDUcUydw
+
+### Contact form submission POST /contact
+POST http://localhost:5001/contact
+Content-Type: application/json
+
+{
+    "name": "Tech Lead",
+    "email": "lead@tech9labs.com",
+    "message": "We need a cloud readiness assessment for Q3."
+}
+
+### Dashboard data GET /dashboard (protected)
+GET http://localhost:5001/dashboard
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc4OTM4MjE3LCJleHAiOjE3NzkwMjQ2MTd9.jUEoT5CRHvqskEz_6Aez_jINF2Wmx3M9S6IrDUcUydw

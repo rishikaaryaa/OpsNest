@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 330 100% 98%;
+  --foreground: 246 24% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 246 24% 12%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 246 24% 12%;
+  --primary: 330 91% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 328 100% 96%;
+  --secondary-foreground: 330 62% 26%;
+  --muted: 326 48% 94%;
+  --muted-foreground: 248 12% 42%;
+  --accent: 268 82% 62%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 350 82% 50%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 326 35% 82%;
+  --input: 326 42% 86%;
+  --ring: 330 91% 50%;
+  --sidebar: 248 28% 12%;
+  --sidebar-foreground: 330 100% 98%;
+  --sidebar-border: 328 42% 24%;
+  --sidebar-accent: 326 74% 24%;
+  --sidebar-accent-foreground: 0 0% 100%;
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-image:
+    linear-gradient(135deg, rgba(255, 246, 252, 0.96), rgba(249, 230, 255, 0.82)),
+    linear-gradient(90deg, rgba(255, 46, 145, 0.16), rgba(124, 58, 237, 0.12)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 236, 246, 0.88));
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+}
+
+a {
+  @apply text-primary;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-14 md:py-20;
+  }
+
+  .section-kicker {
+    @apply text-sm font-semibold text-primary;
+  }
+
+  .section-title {
+    @apply text-3xl font-semibold leading-tight md:text-5xl;
+  }
+
+  .card-surface {
+    @apply rounded-lg border border-white/60 bg-white/65 p-6 shadow-glass backdrop-blur-2xl;
+  }
+
+  .glass-panel {
+    @apply rounded-lg border border-white/60 bg-white/55 shadow-glass backdrop-blur-2xl;
+  }
+
+  .glass-tile {
+    @apply rounded-lg border border-white/50 bg-white/50 shadow-glass-sm backdrop-blur-xl;
+  }
+
+  .premium-gradient-text {
+    @apply bg-gradient-to-r from-fuchsia-600 via-pink-500 to-violet-600 bg-clip-text text-transparent;
+  }
+
+  .primary-button {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-fuchsia-600 via-pink-500 to-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-pink-glow transition duration-300 hover:-translate-y-0.5 hover:shadow-pink-glow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  .secondary-button {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-white/70 bg-white/55 px-6 py-3 text-sm font-semibold text-foreground shadow-glass-sm backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  .text-muted {
+    @apply text-muted-foreground;
+  }
+}
