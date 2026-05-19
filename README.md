@@ -1,4 +1,4 @@
-# Ops Hub
+# OpsNest
 
 Full-stack operations hub for Tech9Labs with a React dashboard, Node.js API, Prisma ORM, PostgreSQL database, JWT authentication, Docker support, and a premium pink glass UI.
 
