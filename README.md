@@ -4,7 +4,7 @@ Full-stack operations hub for Tech9Labs with a React dashboard, Node.js API, Pri
 
 ## Overview
 
-Tech9Labs Ops Hub is a service-operations portal for managing account access, operational entries, and contact submissions. The application includes a public landing page, authentication flow, protected dashboard, searchable work entries, contact inbox, and profile/settings view.
+OpsNest is a service-operations portal for managing account access, operational entries, and contact submissions. The application includes a public landing page, authentication flow, protected dashboard, searchable work entries, contact inbox, and profile/settings view.
 
 ## Features
 
