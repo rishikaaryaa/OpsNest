@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import fs from "fs";
 import path, { dirname } from "path";
@@ -16,7 +17,19 @@ const __filename = fileURLToPath(import.meta.url);
 //Get the directory name from the file path of current module
 const __dirname = dirname(__filename);
 
+const allowedOrigins = (process.env.CORS_ORIGIN ?? "")
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
 //Middlesware
+app.use(
+  cors({
+    origin: allowedOrigins.length ? allowedOrigins : true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  }),
+);
 app.use(express.json());
 const clientDistPath = path.join(__dirname, "../client/dist");
 const publicPath = path.join(__dirname, "../public");

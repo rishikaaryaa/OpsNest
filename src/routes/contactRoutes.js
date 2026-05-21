@@ -62,9 +62,6 @@ router.post("/", async (req, res) => {
 router.get("/", authMiddleware, async (req, res) => {
   try {
     const submissions = await prisma.contactSubmission.findMany({
-      where: {
-        accountId: req.accountId,
-      },
       orderBy: {
         createdAt: "desc",
       },

@@ -1,6 +1,6 @@
 import { clearToken, getToken } from "./auth";
 
-const API_BASE = import.meta.env.VITE_API_BASE ?? "";
+const API_BASE = import.meta.env.VITE_API_BASE ?? "https://opsnest-mfmu.onrender.com";
 
 export async function apiRequest(
   path: string,

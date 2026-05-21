@@ -20,7 +20,6 @@ router.get("/", async (req, res) => {
     });
 
     const contactSubmissions = await prisma.contactSubmission.findMany({
-      where: { accountId: req.accountId },
       orderBy: { createdAt: "desc" },
     });
 
